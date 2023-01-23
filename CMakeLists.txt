@@ -4,5 +4,6 @@ project(curve-fitting)
 set(SOURCE
         src/matrix.cpp)
 
-add_executable("${project}-bin" ${SOURCE} main.cpp)
-target_include_directories("${project}-bin" PUBLIC include)
+add_executable("${PROJECT_NAME}-bin" ${SOURCE} main.cpp)
+set_target_properties("${PROJECT_NAME}-bin" PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
+target_include_directories("${PROJECT_NAME}-bin" PUBLIC include)

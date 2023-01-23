@@ -3,7 +3,6 @@
 #include <utility>
 
 namespace cf {
-
 template <class T> class matrix {
 public:
   matrix(int rows, int columns) : rows(rows), columns(columns) {
@@ -27,5 +26,4 @@ private:
 
   T *data;
 };
-
 } // namespace cf
