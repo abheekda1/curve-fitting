@@ -3,6 +3,8 @@
 #include <utility>
 
 namespace cf {
+
+// works with number types
 template <class T> class matrix {
 public:
   matrix(int rows, int columns) : rows(rows), columns(columns) {
@@ -24,7 +26,7 @@ public:
 
   bool isSquare() { return rows == columns; }
 
-  int getDeterminant() {
+  T getDeterminant() {
     if (!isSquare()) throw std::runtime_error("cannot get determinant of a non-square matrix");
 
     if (rows == 2) {
@@ -32,7 +34,7 @@ public:
             - (this->getVal(std::make_pair(0, 1)) * this->getVal(std::make_pair(1, 0)));
     }
 
-    int ret = 0;
+    T ret = 0;
 
     for (int i = 0; i < columns; i++) {
         matrix<T> subMatrix(rows - 1, columns - 1);
