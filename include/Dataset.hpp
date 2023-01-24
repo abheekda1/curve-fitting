@@ -10,6 +10,7 @@ public:
   Dataset(int N, T x[], T y[]) : N(N), x(x), y(y){};
   Dataset(int N) : N(N), x(new T[N]), y(new T[N]){};
 
+  // todo: make return values their own classes
   std::vector<double> PolyFit(int order);
   std::pair<double, double> LogFit(double base = exp(1));
 
