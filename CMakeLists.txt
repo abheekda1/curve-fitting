@@ -6,7 +6,8 @@ set(CMAKE_CXX_STANDARD 20)
 set(SOURCE
         src/Matrix.cpp
         src/Dataset.cpp
-        src/PolyEquation.cpp)
+        src/PolyEquation.cpp
+        src/LogEquation.cpp)
 
 add_executable("${PROJECT_NAME}-bin" ${SOURCE} main.cpp)
 set_target_properties("${PROJECT_NAME}-bin" PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
