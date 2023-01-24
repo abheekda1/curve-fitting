@@ -4,6 +4,7 @@
 #include <utility>
 #include <vector>
 
+#include "LogEquation.hpp"
 #include "PolyEquation.hpp"
 
 namespace cf {
@@ -14,7 +15,7 @@ public:
 
   // todo: make return values their own classes
   PolyEquation<double> PolyFit(int order);
-  std::pair<double, double> LogFit(double base = exp(1));
+  LogEquation LogFit(double base = exp(1));
 
 private:
   int N; // number of points
