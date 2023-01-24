@@ -4,7 +4,6 @@
 #include <utility>
 
 namespace cf {
-
 // works with number types
 template <class T> class Matrix {
 public:
@@ -18,13 +17,9 @@ public:
   int getRows() { return rows; }
   int getColumns() { return columns; }
 
-  T getVal(std::pair<int, int> position) {
-    return data[position.second * columns + position.first];
-  }
+  T getVal(int x, int y) { return data[y * columns + x]; }
 
-  void insertVal(std::pair<int, int> position, T value) {
-    data[position.second * columns + position.first] = value;
-  }
+  void insertVal(int x, int y, T value) { data[y * columns + x] = value; }
 
   bool isSquare() { return rows == columns; }
 

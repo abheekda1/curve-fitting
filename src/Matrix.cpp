@@ -6,10 +6,8 @@ template <class T> T Matrix<T>::getDeterminant() {
     throw std::runtime_error("cannot get determinant of a non-square matrix");
 
   if (rows == 2) {
-    return (this->getVal(std::make_pair(0, 0)) *
-            this->getVal(std::make_pair(1, 1))) -
-           (this->getVal(std::make_pair(0, 1)) *
-            this->getVal(std::make_pair(1, 0)));
+    return (this->getVal(0, 0) * this->getVal(1, 1)) -
+           (this->getVal(0, 1) * this->getVal(1, 0));
   }
 
   T ret = 0;
@@ -22,13 +20,12 @@ template <class T> T Matrix<T>::getDeterminant() {
         continue;
       int currentRow = 0;
       for (int k = 1; k < rows; k++) {
-        subMatrix.insertVal(std::make_pair(currentColumn, currentRow),
-                            this->getVal(std::make_pair(j, k)));
+        subMatrix.insertVal(currentColumn, currentRow, this->getVal(j, k));
         currentRow++;
       }
       currentColumn++;
     }
-    ret += (this->getVal(std::make_pair(i, 0)) *
+    ret += (this->getVal(i, 0) *
             (subMatrix.getDeterminant() * (i % 2 == 0 ? 1 : -1)));
   }
 
