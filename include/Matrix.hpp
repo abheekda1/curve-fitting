@@ -33,7 +33,7 @@ public:
       for (int j = 0; j < m.getColumns(); j++) {
         os << std::setw(10) << m.getVal(j, i) << ' ';
       }
-      os << "]\n";
+      os << "]" << (i == m.getRows() - 1 ? "" : "\n");
     }
     return os;
   }

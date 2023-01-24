@@ -15,7 +15,8 @@ int main() {
   // clang-format on
 
   cf::Matrix<int> m(4, 4, data);
-  std::cout << m.getDeterminant() << std::endl;
+  std::cout << m << std::endl;
+  std::cout << "determinant: " << m.getDeterminant() << std::endl;
 
   double x1[] = {-3, -2, -1, -0.2, 1, 3};
   double y1[] = {0.9, 0.8, 0.4, 0.2, 0.1, 0};
