@@ -23,7 +23,7 @@ public:
 
   void insertVal(int x, int y, T value) { data[y * columns + x] = value; }
 
-  bool isSquare() { return rows == columns; }
+  bool isSquare() const { return rows == columns; }
 
   T getDeterminant();
 
