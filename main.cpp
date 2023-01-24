@@ -18,6 +18,8 @@ int main() {
   std::cout << m << std::endl;
   std::cout << "determinant: " << m.getDeterminant() << std::endl;
 
+  std::cout << "5x5 identity:\n" << cf::Matrix<int>::identity(5) << std::endl;
+
   double x1[] = {-3, -2, -1, -0.2, 1, 3};
   double y1[] = {0.9, 0.8, 0.4, 0.2, 0.1, 0};
   cf::Dataset<double> d1(6, x1, y1);

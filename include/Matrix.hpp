@@ -27,6 +27,14 @@ public:
 
   T getDeterminant();
 
+  static Matrix<T> identity(int N) {
+    Matrix<T> m(N, N);
+    for (int i = 0; i < N; i++) {
+      m.insertVal(i, i, (T)1);
+    }
+    return m;
+  }
+
   friend std::ostream &operator<<(std::ostream &os, const Matrix<T> &m) {
     for (int i = 0; i < m.getRows(); i++) {
       os << '[';
