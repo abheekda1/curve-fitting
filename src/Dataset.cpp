@@ -3,8 +3,6 @@
 #include "Dataset.hpp"
 #include "Matrix.hpp"
 
-#include <iostream>
-
 namespace cf {
 template <class T> std::vector<double> Dataset<T>::PolyFit(int order) {
   std::vector<double> ret(order + 1);
@@ -19,8 +17,6 @@ template <class T> std::vector<double> Dataset<T>::PolyFit(int order) {
     }
   }
 
-  std::cout << "M:\n" << M << std::endl;
-
   std::vector<double> b(order + 1);
 
   for (int i = 0; i <= order; i++) {
@@ -30,10 +26,6 @@ template <class T> std::vector<double> Dataset<T>::PolyFit(int order) {
     }
   }
 
-  std::cout << "b: [ ";
-  for (const auto &e : b)
-    std::cout << ']' << std::endl;
-
   for (int i = 0; i <= order; i++) {
     T *MiData = new T[M.getRows() * M.getColumns()];
     std::copy(M.getData(), M.getData() + (M.getColumns() * M.getRows()),
@@ -42,8 +34,6 @@ template <class T> std::vector<double> Dataset<T>::PolyFit(int order) {
     for (int j = 0; j <= order; j++) {
       Mi.insertVal(i, j, b.at(j));
     }
-
-    std::cout << "M_" << i << ":\n" << Mi << std::endl;
 
     ret[i] = Mi.getDeterminant() / M.getDeterminant();
   }
