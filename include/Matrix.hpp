@@ -6,13 +6,13 @@
 namespace cf {
 
 // works with number types
-template <class T> class matrix {
+template <class T> class Matrix {
 public:
-  matrix(int rows, int columns) : rows(rows), columns(columns) {
+  Matrix(int rows, int columns) : rows(rows), columns(columns) {
     data = new T[columns * rows];
   }
 
-  matrix(int rows, int columns, T data[])
+  Matrix(int rows, int columns, T data[])
       : rows(rows), columns(columns), data(data) {}
 
   int getRows() { return rows; }

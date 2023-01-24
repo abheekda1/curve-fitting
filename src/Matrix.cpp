@@ -1,7 +1,7 @@
-#include "matrix.hpp"
+#include "Matrix.hpp"
 
 namespace cf {
-template <class T> T matrix<T>::getDeterminant() {
+template <class T> T Matrix<T>::getDeterminant() {
   if (!this->isSquare())
     throw std::runtime_error("cannot get determinant of a non-square matrix");
 
@@ -15,7 +15,7 @@ template <class T> T matrix<T>::getDeterminant() {
   T ret = 0;
 
   for (int i = 0; i < columns; i++) {
-    matrix<T> subMatrix(rows - 1, columns - 1);
+    Matrix<T> subMatrix(rows - 1, columns - 1);
     int currentColumn = 0;
     for (int j = 0; j < columns; j++) {
       if (j == i)
@@ -35,14 +35,14 @@ template <class T> T matrix<T>::getDeterminant() {
   return ret;
 }
 
-template class matrix<int>;
-template class matrix<long>;
-template class matrix<long long>;
+template class Matrix<int>;
+template class Matrix<long>;
+template class Matrix<long long>;
 
-template class matrix<unsigned int>;
-template class matrix<unsigned long>;
-template class matrix<unsigned long long>;
+template class Matrix<unsigned int>;
+template class Matrix<unsigned long>;
+template class Matrix<unsigned long long>;
 
-template class matrix<float>;
-template class matrix<double>;
+template class Matrix<float>;
+template class Matrix<double>;
 } // namespace cf

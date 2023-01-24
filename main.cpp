@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "matrix.hpp"
+#include "Matrix.hpp"
 
 int main() {
   // clang-format off
@@ -12,6 +12,6 @@ int main() {
   };
   // clang-format on
 
-  cf::matrix<int> m(4, 4, data);
+  cf::Matrix<int> m(4, 4, data);
   std::cout << m.getDeterminant() << std::endl;
 }

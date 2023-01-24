@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 project(curve-fitting)
 
 set(SOURCE
-        src/matrix.cpp)
+        src/Matrix.cpp)
 
 add_executable("${PROJECT_NAME}-bin" ${SOURCE} main.cpp)
 set_target_properties("${PROJECT_NAME}-bin" PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
