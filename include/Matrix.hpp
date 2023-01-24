@@ -7,9 +7,8 @@ namespace cf {
 // works with number types
 template <class T> class Matrix {
 public:
-  Matrix(int rows, int columns) : rows(rows), columns(columns) {
-    data = new T[columns * rows];
-  }
+  Matrix(int rows, int columns)
+      : rows(rows), columns(columns), data(new T[rows * columns]) {}
 
   Matrix(int rows, int columns, T data[])
       : rows(rows), columns(columns), data(data) {}
