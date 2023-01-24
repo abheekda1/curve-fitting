@@ -4,6 +4,7 @@
 #include <utility>
 #include <vector>
 
+#include "ExpEquation.hpp"
 #include "LogEquation.hpp"
 #include "PolyEquation.hpp"
 
@@ -16,6 +17,7 @@ public:
   // todo: make return values their own classes
   PolyEquation<double> PolyFit(int order);
   LogEquation LogFit(double base = exp(1));
+  ExpEquation ExpFit(double base = exp(1));
 
 private:
   int N; // number of points

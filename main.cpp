@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Dataset.hpp"
+#include "ExpEquation.hpp"
 #include "Matrix.hpp"
 
 int main() {
@@ -27,4 +28,10 @@ int main() {
   cf::Dataset<double> d2(4, x2, y2);
   cf::LogEquation lnFit = d2.LogFit();
   std::cout << lnFit << std::endl;
+
+  double x3[] = {0, 2, 4, 5, 6};
+  double y3[] = {1.1, 3, 17, 35, 35};
+  cf::Dataset<double> d3(5, x3, y3);
+  cf::ExpEquation expFit = d3.ExpFit();
+  std::cout << expFit << std::endl;
 }
