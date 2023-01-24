@@ -2,9 +2,10 @@
 
 #include "Dataset.hpp"
 #include "Matrix.hpp"
+#include "PolyEquation.hpp"
 
 namespace cf {
-template <class T> std::vector<double> Dataset<T>::PolyFit(int order) {
+template <class T> PolyEquation<double> Dataset<T>::PolyFit(int order) {
   std::vector<double> ret(order + 1);
 
   Matrix<T> M(order + 1, order + 1);

@@ -4,6 +4,8 @@
 #include <utility>
 #include <vector>
 
+#include "PolyEquation.hpp"
+
 namespace cf {
 template <class T> class Dataset {
 public:
@@ -11,7 +13,7 @@ public:
   Dataset(int N) : N(N), x(new T[N]), y(new T[N]){};
 
   // todo: make return values their own classes
-  std::vector<double> PolyFit(int order);
+  PolyEquation<double> PolyFit(int order);
   std::pair<double, double> LogFit(double base = exp(1));
 
 private:
