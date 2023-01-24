@@ -1,7 +1,5 @@
 #pragma once
 
 namespace cf {
-class Dataset {
-
-};
+template <class T> class Dataset {};
 } // namespace cf
