@@ -1,6 +1,8 @@
 #include "Matrix.hpp"
 
 namespace cf {
+// todo: maybe use memoization or something else to optimize speed at larger
+// sizes
 template <class T> T Matrix<T>::getDeterminant() {
   if (!this->isSquare())
     throw std::runtime_error("cannot get determinant of a non-square matrix");
